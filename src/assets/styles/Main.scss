@@ -65,6 +65,14 @@
 
 @media screen {
     @media (max-width: 567px) {
+        .about-section {
+            padding-top: 100px !important;
+            min-height: 350px;
+            background-image: url("../images/bg-dark.png");
+            background-repeat: no-repeat;
+            background-size: auto;
+            background-attachment: local;
+        }
         .nav-left {
             padding-top: 20px;
             float: left;
