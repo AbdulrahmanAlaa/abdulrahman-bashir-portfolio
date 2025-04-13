@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import '../assets/styles/Contact.scss';
-// import emailjs from '@emailjs/browser';
+import emailjs from '@emailjs/browser';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
@@ -27,26 +27,26 @@ function Contact() {
 
     /* Uncomment below if you want to enable the emailJS */
 
-    // if (name !== '' && email !== '' && message !== '') {
-    //   var templateParams = {
-    //     name: name,
-    //     email: email,
-    //     message: message
-    //   };
+    if (name !== '' && email !== '' && message !== '') {
+      var templateParams = {
+        name: name,
+        email: email,
+        message: message
+      };
 
-    //   console.log(templateParams);
-    //   emailjs.send('service_id', 'template_id', templateParams, 'api_key').then(
-    //     (response) => {
-    //       console.log('SUCCESS!', response.status, response.text);
-    //     },
-    //     (error) => {
-    //       console.log('FAILED...', error);
-    //     },
-    //   );
-    //   setName('');
-    //   setEmail('');
-    //   setMessage('');
-    // }
+      console.log(templateParams);
+      emailjs.send('service_ye32xm4', 'template_kwv9beb', templateParams, 'yZFW5fvBkZ04m6ULW').then(
+        (response) => {
+          console.log('SUCCESS!', response.status, response.text);
+        },
+        (error) => {
+          console.log('FAILED...', error);
+        },
+      );
+      setName('');
+      setEmail('');
+      setMessage('');
+    }
   };
 
   return (
@@ -64,10 +64,11 @@ function Contact() {
           >
             <div className='form-flex'>
               <TextField
+                variant='filled'
                 required
-                id="outlined-required"
                 label="Your Name"
                 placeholder="What's your name?"
+                className="MuiInputBase-input MuiOutlinedInput-input"
                 value={name}
                 onChange={(e) => {
                   setName(e.target.value);
@@ -76,6 +77,7 @@ function Contact() {
                 helperText={nameError ? "Please enter your name" : ""}
               />
               <TextField
+                variant='filled'
                 required
                 id="outlined-required"
                 label="Email / Phone"
@@ -89,6 +91,7 @@ function Contact() {
               />
             </div>
             <TextField
+              variant='filled'
               required
               id="outlined-multiline-static"
               label="Message"

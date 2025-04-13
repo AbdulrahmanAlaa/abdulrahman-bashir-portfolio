@@ -19,13 +19,13 @@
   }
 
   fieldset {
-    background-color: white;
+    // background-color: white;
   }
 }
 
 label {
   font-size: 1.2rem;
-  font-family: 'DomaineDispNar-Medium', sans-serif;
+  font-family: "DomaineDispNar-Medium", sans-serif;
 }
 
 .form-flex {
@@ -34,8 +34,11 @@ label {
   padding-bottom: 15px;
 }
 
-.form-flex .MuiFormControl-root {
+.contact-form .MuiFormControl-root,
+.contact-form .MuiInputBase-root {
   width: 100%;
+  background-color: white;
+  border-radius: 5px;
 }
 
 form {
