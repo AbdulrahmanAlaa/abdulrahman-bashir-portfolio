@@ -5,6 +5,8 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
 import TextField from '@mui/material/TextField';
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 
 function Contact() {
 
@@ -16,7 +18,15 @@ function Contact() {
   const [emailError, setEmailError] = useState<boolean>(false);
   const [messageError, setMessageError] = useState<boolean>(false);
 
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState('');
+  const [snackbarSeverity, setSnackbarSeverity] = useState<'success' | 'error'>('success');
+
   const form = useRef();
+
+  const handleSnackbarClose = () => {
+    setSnackbarOpen(false);
+  };
 
   const sendEmail = (e: any) => {
     e.preventDefault();
@@ -38,14 +48,24 @@ function Contact() {
       emailjs.send('service_ye32xm4', 'template_kwv9beb', templateParams, 'yZFW5fvBkZ04m6ULW').then(
         (response) => {
           console.log('SUCCESS!', response.status, response.text);
+          setSnackbarSeverity('success');
+          setSnackbarMessage('Message sent successfully!');
+          setSnackbarOpen(true);
+          setName('');
+          setEmail('');
+          setMessage('');
         },
         (error) => {
           console.log('FAILED...', error);
+          setSnackbarSeverity('error');
+          setSnackbarMessage('Failed to send message. Please try again.');
+          setSnackbarOpen(true);
         },
       );
-      setName('');
-      setEmail('');
-      setMessage('');
+    } else {
+      setSnackbarSeverity('error');
+      setSnackbarMessage('Please fill in all required fields.');
+      setSnackbarOpen(true);
     }
   };
 
@@ -112,6 +132,20 @@ function Contact() {
           </Box>
         </div>
       </div>
+      <Snackbar
+        open={snackbarOpen}
+        autoHideDuration={6000}
+        onClose={handleSnackbarClose}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+      >
+        <Alert
+          onClose={handleSnackbarClose}
+          severity={snackbarSeverity}
+          sx={{ width: '100%' }}
+        >
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
     </div>
   );
 }
