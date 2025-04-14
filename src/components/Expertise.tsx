@@ -21,15 +21,19 @@ const webLabels = [
 ];
 
 const devopsLabels = [
+    "CI/CD",
+    "Terraform",
+    "Kubernetes",
     "Git",
-    "GitHub Actions",
     "Docker",
+    "Docker Compose",
+    "Drone CI",
     "AWS",
-    "Azure",
+    "S3 Bucket",
+    "AWS Lambda",
+    "AWS CloudFront",
     "Linux",
-    "Snowflake",
-    "Pandas",
-    "Selenium",
+    "ArgoCD",
 ];
 
 const mobileLabels = [
