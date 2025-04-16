@@ -1,0 +1,70 @@
+.project-details-dialog {
+    .MuiDialog-paper {
+        background-color: #0d1116;
+    }
+
+    .close-button {
+        position: fixed;
+        right: 20px;
+        top: 20px;
+        color: white;
+        z-index: 1300;
+        background-color: rgba(80, 0, 202, 0.8);
+
+        &:hover {
+            background-color: rgba(80, 0, 202, 1);
+        }
+    }
+
+    .dialog-content {
+        padding: 40px;
+        color: white;
+    }
+
+    .project-header {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        padding-top: 40px;
+
+        img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            margin-bottom: 16px;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+    }
+}
+
+// Light mode styles - directly on the dialog
+.project-details-dialog.light-mode {
+    .MuiDialog-paper {
+        background-color: #f8f9fa;
+    }
+
+    .close-button {
+        color: white;
+    }
+
+    .dialog-content {
+        color: #0d1116;
+    }
+
+    .project-header {
+        h1 {
+            color: #0d1116;
+        }
+
+        p {
+            color: #0d1116;
+        }
+    }
+}
