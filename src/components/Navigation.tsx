@@ -19,7 +19,7 @@ import Toolbar from '@mui/material/Toolbar';
 const drawerWidth = 240;
 const navItems = [['Expertise', 'expertise'],
 ['History', 'history'],
-// ['Projects', 'projects'],
+['Projects', 'projects'],
 ['Contact', 'contact']
 ];
 
@@ -51,7 +51,6 @@ function Navigation({ parentToChild, modeChange }: any) {
   }, []);
 
   const scrollToSection = (section: string) => {
-    console.log(section)
     const expertiseElement = document.getElementById(section);
     if (expertiseElement) {
       expertiseElement.scrollIntoView({ behavior: 'smooth' });

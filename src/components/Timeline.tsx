@@ -22,7 +22,7 @@ function Timeline() {
           >
             <h3 className="vertical-timeline-element-title">Chapter Lead Frontend - Talabat (Delivery Hero SE) </h3>
             <h4 className="vertical-timeline-element-subtitle">Dubai, United Arab Emirates</h4>
-            <p>
+            <div className="timeline-content">
               <h4>
                 📲 Instagram-style Video Stories Feature (2021 – Present)
               </h4>
@@ -50,7 +50,6 @@ function Timeline() {
                 </li>
               </ul>
               <h4>
-
                 📈 Performance Optimization & Monitoring
               </h4>
               <ul>
@@ -78,7 +77,7 @@ function Timeline() {
                   Championed clean code practices, scalability, and modular architecture across mobile features.
                 </li>
               </ul>
-            </p>
+            </div>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
@@ -89,15 +88,12 @@ function Timeline() {
             <h3 className="vertical-timeline-element-title">Senior Full-Stack Engineer - Crossover (Contract Role with Upland)
             </h3>
             <h4 className="vertical-timeline-element-subtitle">Remote</h4>
-            <p>
-              Selected among the top 3% of global talent.
-
-              Worked with AngularJS 1.5 and migrated to Angular 4.5.
-
-              Built dashboards and reports using SQL Server Reporting Services (SSRS).
-
-              Compensation matched a lead-level role in Egypt.
-            </p>
+            <div className="timeline-content">
+              <p>Selected among the top 3% of global talent.</p>
+              <p>Worked with AngularJS 1.5 and migrated to Angular 4.5.</p>
+              <p>Built dashboards and reports using SQL Server Reporting Services (SSRS).</p>
+              <p>Compensation matched a lead-level role in Egypt.</p>
+            </div>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
@@ -107,15 +103,12 @@ function Timeline() {
           >
             <h3 className="vertical-timeline-element-title">Senior Software Engineer - Vodafone Germany</h3>
             <h4 className="vertical-timeline-element-subtitle"> Cairo, Egypt</h4>
-            <p>
-              Led a frontend migration from AngularJS 1.5 to Angular 4.
-
-              Managed and mentored 3 junior engineers.
-
-              Wrote design documents and aligned backend contracts with frontend.
-
-              Collaborated with German DevOps team for release management.
-            </p>
+            <div className="timeline-content">
+              <p>Led a frontend migration from AngularJS 1.5 to Angular 4.</p>
+              <p>Managed and mentored 3 junior engineers.</p>
+              <p>Wrote design documents and aligned backend contracts with frontend.</p>
+              <p>Collaborated with German DevOps team for release management.</p>
+            </div>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
@@ -125,7 +118,7 @@ function Timeline() {
           >
             <h3 className="vertical-timeline-element-title">Teaching Assistant at Information Technology Institute (ITI)</h3>
             <h4 className="vertical-timeline-element-subtitle">Cairo, Egypt</h4>
-            <p>
+            <div className="timeline-content">
               <h4>
                 Department Management Activities:
               </h4>
@@ -147,7 +140,7 @@ function Timeline() {
                   Projects Supervision.
                 </li>
               </ul>
-            </p>
+            </div>
           </VerticalTimelineElement>
         </VerticalTimeline>
       </div>

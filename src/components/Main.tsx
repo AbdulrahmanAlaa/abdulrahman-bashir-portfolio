@@ -21,7 +21,7 @@ function Main() {
           </div>
           <h1>Abdulrahman Bashir</h1>
           <p>Senior Frontend Engineer</p>
-          <p>
+          <h4 className="typewriter-text">
             <Typewriter
               options={{
                 strings: [
@@ -30,14 +30,13 @@ function Main() {
                   TypeWriterLabels.third,
                   TypeWriterLabels.fourth,
                   TypeWriterLabels.fifth,
-
                 ],
                 autoStart: true,
                 loop: true,
                 deleteSpeed: 10,
               }}
             />
-          </p>
+          </h4>
           <div className="mobile_social_icons">
             <a href="https://github.com/AbdulrahmanAlaa" target="_blank" rel="noreferrer"><GitHubIcon /></a>
             <a href="https://www.linkedin.com/in/abdulrahmanalaaeldeen/" target="_blank" rel="noreferrer"><LinkedInIcon /></a>

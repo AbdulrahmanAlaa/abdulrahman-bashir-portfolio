@@ -2,7 +2,7 @@
   "name": "abdulrahman-bashir-portfolio-template",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://abdulrahman-bashir.com",
+  "homepage": "https://www.abdulrahman-bashir.com",
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@emotion/react": "^11.11.4",
@@ -34,7 +34,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build && cp ./CNAME build/CNAME",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
@@ -56,6 +56,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@types/react-vertical-timeline-component": "^3.3.6"
   }
 }
