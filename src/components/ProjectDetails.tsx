@@ -6,19 +6,13 @@ import Slide from '@mui/material/Slide';
 import { TransitionProps } from '@mui/material/transitions';
 import { forwardRef } from 'react';
 import '../assets/styles/ProjectDetails.scss';
+import { ProjectData } from '../types/project';
 
 interface ProjectDetailsProps {
     open: boolean;
     onClose: () => void;
-    mode: string; // Add mode prop
-    project: {
-        title: string;
-        description: string;
-        image: string;
-        link: string;
-        hasAndroid?: boolean;
-        hasIOS?: boolean;
-    } | null;
+    mode: string;
+    project: ProjectData | null;
 }
 
 const Transition = forwardRef(function Transition(
@@ -32,6 +26,7 @@ const Transition = forwardRef(function Transition(
 
 function ProjectDetails({ open, onClose, project, mode }: ProjectDetailsProps) {
     if (!project) return null;
+    const ProjectComponent = project.component;
 
     return (
         <Dialog
@@ -49,11 +44,7 @@ function ProjectDetails({ open, onClose, project, mode }: ProjectDetailsProps) {
                 <CloseIcon />
             </IconButton>
             <DialogContent className="dialog-content">
-                <div className="project-header">
-                    <img src={project.image} alt={project.title} />
-                    <h1>{project.title}</h1>
-                    <p>{project.description}</p>
-                </div>
+                <ProjectComponent />
             </DialogContent>
         </Dialog>
     );

@@ -1,50 +1,45 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 import ProjectDetails from './ProjectDetails';
+import TalabatWebsite from './projects/TalabatWebsite';
+import TalabatMobile from './projects/TalabatMobile';
+import Vodafone from './projects/Vodafone';
+import { ProjectData } from '../types/project';
 import talabatWebsite from '../assets/images/projects/talabat-website/1.website.png';
-import vodafone from '../assets/images/projects/vodafone/vodafone.png';
-
+import vodafoneWebsite from '../assets/images/projects/vodafone/vodafoneWebsite.png';
 import '../assets/styles/Project.scss';
 import { faAndroid, faApple } from '@fortawesome/free-brands-svg-icons';
 
-interface ProjectData {
-    id: number;
-    title: string;
-    description: string;
-    image: string;
-    link: string;
-    hasAndroid?: boolean;
-    hasIOS?: boolean;
-}
-
 function Project() {
     const [selectedProject, setSelectedProject] = useState<ProjectData | null>(null);
-    // Get mode from closest parent with light/dark mode class
     const mode = document.querySelector('.light-mode') ? 'light' : 'dark';
 
     const projects: ProjectData[] = [
         {
             id: 1,
             title: "Talabat website",
-            description: "Talabat is a leading online food ordering and delivery platform in the Middle East. I worked on the front-end development of the Talabat website, focusing on enhancing user experience and optimizing performance.",
+            description: "Talabat is a leading online food ordering and delivery platform in the Middle East.",
             image: talabatWebsite,
-            link: "https://www.talabat.com/"
+            link: "https://www.talabat.com/",
+            component: TalabatWebsite
         },
         {
             id: 2,
             title: "Talabat Mobile",
-            description: "Talabat is a leading online food ordering and delivery platform in the Middle East. I contributed to the development of the Talabat mobile app, focusing on enhancing user experience and optimizing performance.",
-            image: vodafone,
+            description: "Talabat mobile applications for iOS and Android.",
+            image: talabatWebsite,
             link: "https://www.talabat.com/",
             hasAndroid: true,
-            hasIOS: true
+            hasIOS: true,
+            component: TalabatMobile
         },
         {
             id: 3,
             title: "Vodafone Germany",
-            description: "Vodafone is a global telecommunications company. I contributed to the development of their website, focusing on improving user engagement and accessibility.",
-            image: vodafone,
-            link: "https://vodafone.de"
+            description: "Vodafone telecommunications website.",
+            image: vodafoneWebsite,
+            link: "https://vodafone.de",
+            component: Vodafone
         }
     ];
 

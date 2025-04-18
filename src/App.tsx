@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {
     Main,
     Timeline,
@@ -14,6 +15,17 @@ import './index.scss';
 function App() {
     const [mode, setMode] = useState<string>('dark');
 
+    const theme = createTheme({
+        palette: {
+            primary: {
+                main: '#5000ca',
+            },
+            secondary: {
+                main: 'rgba(94, 33, 185, 0.8)',
+            },
+        },
+    });
+
     const handleModeChange = () => {
         if (mode === 'dark') {
             setMode('light');
@@ -27,17 +39,19 @@ function App() {
     }, []);
 
     return (
-        <div className={`main-container ${mode === 'dark' ? 'dark-mode' : 'light-mode'}`}>
-            <Navigation parentToChild={{ mode }} modeChange={handleModeChange} />
-            <FadeIn transitionDuration={700}>
-                <Main />
-                <Expertise />
-                <Timeline />
-                <Project />
-                <Contact />
-            </FadeIn>
-            <Footer />
-        </div>
+        <ThemeProvider theme={theme}>
+            <div className={`main-container ${mode === 'dark' ? 'dark-mode' : 'light-mode'}`}>
+                <Navigation parentToChild={{ mode }} modeChange={handleModeChange} />
+                <FadeIn transitionDuration={700}>
+                    <Main />
+                    <Expertise />
+                    <Timeline />
+                    <Project />
+                    <Contact />
+                </FadeIn>
+                <Footer />
+            </div>
+        </ThemeProvider>
     );
 }
 

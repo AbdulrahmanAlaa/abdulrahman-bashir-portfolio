@@ -3,13 +3,17 @@
         background-color: #0d1116;
     }
 
+    .MuiTypography-root {
+        font-family: "Lato", sans-serif;
+    }
+
     .close-button {
         position: fixed;
         right: 20px;
         top: 20px;
         color: white;
         z-index: 1300;
-        background-color: rgba(80, 0, 202, 0.8);
+        background-color: rgba(94, 33, 185, 0.8);
 
         &:hover {
             background-color: rgba(80, 0, 202, 1);
@@ -19,6 +23,7 @@
     .dialog-content {
         padding: 40px;
         color: white;
+        font-family: "Lato", sans-serif;
     }
 
     .project-header {
