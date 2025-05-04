@@ -35,15 +35,40 @@ function ProjectDetails({ open, onClose, project, mode }: ProjectDetailsProps) {
             onClose={onClose}
             TransitionComponent={Transition}
             className={`project-details-dialog ${mode === 'light' ? 'light-mode' : 'dark-mode'}`}
+            sx={{
+                '& .MuiDialog-paper': {
+                    width: '100vw',
+                    height: '100vh',
+                    margin: 0,
+                    padding: 0,
+                    maxWidth: 'none',
+                    maxHeight: 'none',
+                    borderRadius: 0,
+                    overflow: 'auto'
+                },
+                '& .MuiDialogContent-root': {
+                    padding: 0,
+                    margin: 0
+                },
+                '& .MuiBox-root': {
+                    padding: 0
+                }
+            }}
         >
             <IconButton
                 aria-label="close"
                 onClick={onClose}
                 className="close-button"
+                sx={{
+                    position: 'fixed',
+                    right: 16,
+                    top: 16,
+                    zIndex: 2000
+                }}
             >
                 <CloseIcon />
             </IconButton>
-            <DialogContent className="dialog-content">
+            <DialogContent>
                 <ProjectComponent />
             </DialogContent>
         </Dialog>

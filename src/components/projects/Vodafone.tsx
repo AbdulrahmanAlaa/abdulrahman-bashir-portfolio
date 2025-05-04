@@ -10,7 +10,10 @@ import {
     Button,
     Paper,
     Grid,
-    Divider
+    Divider,
+    MobileStepper,
+    IconButton,
+    useMediaQuery,
 } from '@mui/material';
 import {
     Code as CodeIcon,
@@ -18,117 +21,179 @@ import {
     Person as PersonIcon,
     Link as LinkIcon,
     CheckCircleOutline as CheckIcon,
-    House as CompanyIcon,
     LocationOn as LocationIcon,
     Build as ToolsIcon,
 } from '@mui/icons-material';
 import { useTheme } from '@mui/material/styles';
-import vodafoneWebsite from '../../assets/images/projects/vodafone/vodafoneWebsite.png';
+import vodafone_card_early_bird from '../../assets/images/projects/vodafone/vodafone_card_early_bird.jpg';
+import vodafone_early_attendance from '../../assets/images/projects/vodafone/vodafone_early_attendance.jpg';
+import vodafone_early_bird from '../../assets/images/projects/vodafone/vodafone_early_bird.jpg';
+import vodafone_id from '../../assets/images/projects/vodafone/vodafone_id.jpg';
+import vodafone_intro from '../../assets/images/projects/vodafone/vodafone_intro.jpg';
+import vodafoneLogo from '../../assets/images/projects/vodafone/vodafone-logo.png';
 
-const technologies = ['React', 'Redux', 'TypeScript', 'CSS', 'Jest', 'Git'];
+import ImageCarousel from '../common/ImageCarousel';
+
+const images = [
+    vodafone_card_early_bird,
+    vodafone_early_attendance,
+    vodafone_early_bird,
+    vodafone_id,
+    vodafone_intro
+];
+
+const technologies = [
+    'AngularJS', 'Angular',
+    'React', 'Redux', 'TypeScript', 'CSS', 'Jest', 'Git', 'Gulp', 'Grant', 'Webpack', 'HTML5', 'Sass',];
 const responsibilities = [
-    'Developing and maintaining the Vodafone website.',
-    'Implementing new features and fixing bugs.',
-    'Collaborating with designers and backend developers.',
-    'Ensuring cross-browser compatibility and responsiveness.',
-    'Writing unit tests and performing code reviews.',
-    'Optimizing website performance and load times.',
-    'Participating in Agile development processes.',
-    'Mentoring junior developers.',
-    'Conducting code reviews',
-    'Writing technical documentation for the team and stakeholders.',
     'Participated in the recruitment process by interviewing and evaluating software engineering candidates.',
+    'Staying up-to-date with the latest web development trends and technologies.',
     'Participating in team meetings and contributing to project planning.',
-    'Staying up-to-date with the latest web development trends and technologies.'
+    'Writing technical documentation for the team and stakeholders.',
+    'Ensuring cross-browser compatibility and responsiveness.',
+    'Collaborated with designers and backend developers to implement new features, fix bugs, and optimize website performance.',
+    'Developed and maintained the Vodafone website while participating in Agile processes and performing code reviews.',
+    'Wrote unit tests, mentored junior developers, and created design documents to guide their implementation.',
+
+
+
+
+
+
+
+
 ];
 
 const Vodafone = () => {
     const theme = useTheme();
-
     const typographyStyles = {
         fontFamily: '"Lato", sans-serif'
     };
 
     return (
-        <Box sx={{ p: 4, maxWidth: 1200, margin: '0 auto' }}>
-            <Grid container spacing={4}>
+        <Box sx={{ p: { xs: 0, sm: 4 }, maxWidth: 1200, margin: '0 auto' }}>
+            <Grid container spacing={{ xs: 2, sm: 4 }}> {/* Reduced spacing for mobile */}
+                {/* Top Section with side-by-side layout */}
                 <Grid item xs={12}>
-                    <Paper elevation={3} sx={{ p: 3, mb: 4, borderRadius: 2 }}>
-                        <Box component="img"
-                            src={vodafoneWebsite}
-                            alt="Vodafone Website"
-                            sx={{
-                                width: '100%',
-                                height: 'auto',
-                                borderRadius: 1,
-                                mb: 3
-                            }}
-                        />
-                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 2, lineHeight: 1 }}>
-                            <CompanyIcon
-                                color="primary"
-                                sx={{ fontSize: 30 }}
-                            />
-                            <Typography variant="h5" color="text.primary" sx={typographyStyles}>
-                                Vodafone Germany
-                            </Typography>
-                        </Box>
-                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, lineHeight: 1, mt: 1 }}>
-                            <LocationIcon fontSize="small" color="action" sx={{ mb: 0 }} />
-                            <Typography variant="subtitle1" color="text.secondary" sx={typographyStyles}>
-                                Enterprise-level telecommunications website development
-                            </Typography>
-                        </Box>
+                    <Paper elevation={3} sx={{
+                        p: { xs: 2, sm: 3 }, // Reduced padding for mobile
+                        mb: { xs: 2, sm: 4 }, // Reduced margin for mobile
+                        mt: { xs: 0, sm: 3 }, // Add margin top for larger screens
+                        borderRadius: 2
+                    }}>
+                        <Grid container spacing={3}>
+                            {/* Left side - Company Info & Roles */}
+                            <Grid item xs={12} md={4} sx={{
+                                order: { xs: 2, md: 1 }
+                            }}>
+                                <Box sx={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    gap: 4
+                                }}>
+                                    {/* Company Info */}
+                                    <Box>
+                                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 2 }}>
+                                            <Box
+                                                component="img"
+                                                src={vodafoneLogo}
+                                                alt="Vodafone Logo"
+                                                sx={{
+                                                    width: 30,
+                                                    height: 30,
+                                                    objectFit: 'contain'
+                                                }}
+                                            />
+                                            <Typography variant="h5" color="text.primary" sx={typographyStyles}>
+                                                Vodafone Germany
+                                            </Typography>
+                                        </Box>
+                                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                                            <LocationIcon fontSize="small" color="action" />
+                                            <Typography variant="subtitle1" color="text.secondary" sx={typographyStyles}>
+                                                Enterprise-level telecommunications website development
+                                            </Typography>
+                                        </Box>
+                                    </Box>
+
+                                    {/* Role Info */}
+                                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+                                        <Box>
+                                            <Box sx={{
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                gap: 2
+                                            }}>
+                                                <PersonIcon sx={{ fontSize: 20 }} color="primary" />
+                                                <Typography variant="h6" color="secondary.main" sx={typographyStyles}>
+                                                    Role
+                                                </Typography>
+                                                <Typography variant="h6" color="text.primary" sx={typographyStyles}>
+                                                    Senior Frontend Developer
+                                                </Typography>
+                                            </Box>
+                                        </Box>
+
+                                        <Box>
+                                            <Box sx={{
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                gap: 2
+                                            }}>
+                                                <TimerIcon sx={{ fontSize: 20 }} color="primary" />
+                                                <Typography variant="h6" color="secondary.main" sx={typographyStyles}>
+                                                    Duration
+                                                </Typography>
+                                                <Typography variant="h6" color="text.primary" sx={typographyStyles}>
+                                                    1 Year and 6 Months
+                                                </Typography>
+                                            </Box>
+                                        </Box>
+
+                                        <Box>
+                                            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+                                                <ToolsIcon sx={{ mr: 1 }} color="primary" />
+                                                <Typography variant="h6" color="secondary.main" sx={typographyStyles}>Technologies</Typography>
+                                            </Box>
+                                            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+                                                {technologies.map((tech) => (
+                                                    <Chip
+                                                        key={tech}
+                                                        label={tech}
+                                                        color="primary"
+                                                        variant="outlined"
+                                                        sx={{
+                                                            borderRadius: '16px',
+                                                            '&:hover': {
+                                                                backgroundColor: theme.palette.primary.main,
+                                                                color: theme.palette.primary.contrastText,
+                                                                cursor: 'pointer',
+                                                            },
+                                                        }}
+                                                    />
+                                                ))}
+                                            </Box>
+                                        </Box>
+                                    </Box>
+                                </Box>
+                            </Grid>
+
+                            {/* Right side - Image Carousel */}
+                            <Grid item xs={12} md={8} sx={{
+                                order: { xs: 1, md: 2 }
+                            }}>
+                                <ImageCarousel images={images} />
+                            </Grid>
+                        </Grid>
                     </Paper>
                 </Grid>
 
-                <Grid item xs={12} md={4}>
-                    <Paper elevation={3} sx={{ p: 3, borderRadius: 2, height: '100%' }}>
-                        <Box sx={{ mb: 3 }}>
-                            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                                <PersonIcon sx={{ mr: 1 }} color="primary" />
-                                <Typography variant="h6" color="text.primary" sx={typographyStyles}>Role</Typography>
-                            </Box>
-                            <Typography variant="body1" color="text.secondary" sx={typographyStyles}>Frontend Developer</Typography>
-                        </Box>
-
-                        <Box sx={{ mb: 3 }}>
-                            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                                <TimerIcon sx={{ mr: 1 }} color="primary" />
-                                <Typography variant="h6" color="text.primary" sx={typographyStyles}>Duration</Typography>
-                            </Box>
-                            <Typography variant="body1" color="text.secondary" sx={typographyStyles}>1.5 Years</Typography>
-                        </Box>
-
-                        <Box>
-                            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                                <ToolsIcon sx={{ mr: 1 }} color="primary" />
-                                <Typography variant="h6" color="text.primary" sx={typographyStyles}>Technologies</Typography>
-                            </Box>
-                            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
-                                {technologies.map((tech) => (
-                                    <Chip
-                                        key={tech}
-                                        label={tech}
-                                        color="primary"
-                                        variant="outlined"
-                                        sx={{
-                                            borderRadius: '16px',
-                                            '&:hover': {
-                                                backgroundColor: theme.palette.primary.main,
-                                                color: theme.palette.primary.contrastText,
-                                                cursor: 'pointer',
-                                            },
-                                        }}
-                                    />
-                                ))}
-                            </Box>
-                        </Box>
-                    </Paper>
-                </Grid>
-
-                <Grid item xs={12} md={8}>
-                    <Paper elevation={3} sx={{ p: 3, borderRadius: 2 }}>
+                {/* Full Width - Responsibilities */}
+                <Grid item xs={12}>
+                    <Paper elevation={3} sx={{
+                        p: { xs: 2, sm: 3 }, // Reduced padding for mobile
+                        borderRadius: 2
+                    }}>
                         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 3 }}>
                             <CheckIcon color="primary" />
                             <Typography variant="h5" color="text.primary" sx={typographyStyles}>
