@@ -19,7 +19,6 @@ const ImageCarousel = ({ images }: ImageCarouselProps) => {
     const theme = useTheme();
     const [activeStep, setActiveStep] = useState(0);
     const maxSteps = images.length;
-    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
     const handleNext = () => {
         setActiveStep((prevStep) =>
