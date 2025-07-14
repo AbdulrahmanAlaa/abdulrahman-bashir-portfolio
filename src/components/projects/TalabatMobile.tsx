@@ -1,8 +1,4 @@
 const TalabatMobile = () => {
-    return (
-        <div className="project">
-            TalabatMobile
-        </div>
-    );
-}
+  return <div className="project">TalabatMobile TBD</div>;
+};
 export default TalabatMobile;
