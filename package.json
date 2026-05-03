@@ -35,7 +35,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build && cp ./CNAME build/CNAME",
+    "predeploy": "npm run build && node -e \"require('fs').copyFileSync('CNAME', 'build/CNAME')\"",
     "deploy": "gh-pages -d build",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix",
