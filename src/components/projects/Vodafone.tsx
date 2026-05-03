@@ -1,4 +1,4 @@
-import { useState } from 'react';
+
 import {
     Box,
     Typography,
@@ -11,12 +11,11 @@ import {
     Paper,
     Grid,
     Divider,
-    MobileStepper,
-    IconButton,
-    useMediaQuery,
+
+
 } from '@mui/material';
 import {
-    Code as CodeIcon,
+
     Timer as TimerIcon,
     Person as PersonIcon,
     Link as LinkIcon,
@@ -25,12 +24,12 @@ import {
     Build as ToolsIcon,
 } from '@mui/icons-material';
 import { useTheme } from '@mui/material/styles';
-import vodafone_card_early_bird from '../../assets/images/projects/vodafone/vodafone_card_early_bird.jpg';
-import vodafone_early_attendance from '../../assets/images/projects/vodafone/vodafone_early_attendance.jpg';
-import vodafone_early_bird from '../../assets/images/projects/vodafone/vodafone_early_bird.jpg';
-import vodafone_id from '../../assets/images/projects/vodafone/vodafone_id.jpg';
-import vodafone_intro from '../../assets/images/projects/vodafone/vodafone_intro.jpg';
-import vodafoneLogo from '../../assets/images/projects/vodafone/vodafone-logo.png';
+import vodafone_card_early_bird from '../../assets/images/projects/vodafone/vodafone_card_early_bird.webp';
+import vodafone_early_attendance from '../../assets/images/projects/vodafone/vodafone_early_attendance.webp';
+import vodafone_early_bird from '../../assets/images/projects/vodafone/vodafone_early_bird.webp';
+import vodafone_id from '../../assets/images/projects/vodafone/vodafone_id.webp';
+import vodafone_intro from '../../assets/images/projects/vodafone/vodafone_intro.webp';
+import vodafoneLogo from '../../assets/images/projects/vodafone/vodafone-logo.webp';
 
 import ImageCarousel from '../common/ImageCarousel';
 

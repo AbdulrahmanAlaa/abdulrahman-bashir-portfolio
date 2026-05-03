@@ -3,7 +3,6 @@ import {
     Box,
     MobileStepper,
     IconButton,
-    useMediaQuery
 } from '@mui/material';
 import {
     KeyboardArrowLeft,

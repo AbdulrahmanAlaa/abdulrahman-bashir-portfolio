@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import {
   Main,
@@ -15,17 +15,20 @@ import "./index.scss";
 function App() {
   const [mode, setMode] = useState<string>("dark");
 
-  const theme = createTheme({
-    palette: {
-      primary: {
-        main: "#f55905",
-      },
-      secondary: {
-        main: "#f55905",
-        // main: "#CFFF00",
-      },
-    },
-  });
+  const theme = useMemo(
+    () =>
+      createTheme({
+        palette: {
+          primary: {
+            main: "#f55905",
+          },
+          secondary: {
+            main: "#f55905",
+          },
+        },
+      }),
+    []
+  );
 
   const handleModeChange = () => {
     if (mode === "dark") {

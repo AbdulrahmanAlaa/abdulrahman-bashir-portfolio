@@ -1,0 +1,8 @@
+{
+    "env": {
+        "ANTHROPIC_BASE_URL": "http://localhost:1234",
+        "ANTHROPIC_AUTH_TOKEN": "lmstudio",
+        "ANTHROPIC_API_KEY": "lmstudio"
+    },
+    "model": "default_model"
+}

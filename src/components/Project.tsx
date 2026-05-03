@@ -1,14 +1,17 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useState } from 'react';
+import { lazy, useState } from 'react';
 import ProjectDetails from './ProjectDetails';
-import TalabatWebsite from './projects/TalabatWebsite';
-import TalabatMobile from './projects/TalabatMobile';
-import Vodafone from './projects/Vodafone';
 import { ProjectData } from '../types/project';
-import talabatWebsite from '../assets/images/projects/talabat-website/1.website.png';
-import vodafoneWebsite from '../assets/images/projects/vodafone/vodafoneWebsite.png';
+import talabatWebsite from '../assets/images/projects/talabat-website/1.website.webp';
+import vodafoneWebsite from '../assets/images/projects/vodafone/vodafoneWebsite.webp';
 import '../assets/styles/Project.scss';
 import { faAndroid, faApple } from '@fortawesome/free-brands-svg-icons';
+
+// Lazy-load project detail components — they contain heavy deps (react-player, image carousels)
+// and only render inside a fullscreen dialog on user interaction
+const TalabatWebsite = lazy(() => import('./projects/TalabatWebsite'));
+const TalabatMobile = lazy(() => import('./projects/TalabatMobile'));
+const Vodafone = lazy(() => import('./projects/Vodafone'));
 
 function Project() {
     const [selectedProject, setSelectedProject] = useState<ProjectData | null>(null);
@@ -54,7 +57,7 @@ function Project() {
                         onClick={() => setSelectedProject(project)}
                         style={{ cursor: 'pointer' }}
                     >
-                        <img src={project.image} className="zoom" alt={project.title} width="100%" />
+                        <img src={project.image} className="zoom" alt={project.title} width="100%" loading="lazy" />
                         <h2 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                             {project.title}
                             {project.hasAndroid && (

@@ -1,3 +1,6 @@
+running claude
+claude --settings 'g:/GitHub/abdulrahman-bashir-portfolio/settings.cloud.json'
+
 # Personal Portfolio Website
 
 A modern, responsive portfolio website built with React, TypeScript, and Material-UI.

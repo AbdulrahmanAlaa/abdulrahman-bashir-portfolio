@@ -3,8 +3,10 @@ import DialogContent from '@mui/material/DialogContent';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Slide from '@mui/material/Slide';
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 import { TransitionProps } from '@mui/material/transitions';
-import { forwardRef } from 'react';
+import { forwardRef, Suspense } from 'react';
 import '../assets/styles/ProjectDetails.scss';
 import { ProjectData } from '../types/project';
 
@@ -69,7 +71,15 @@ function ProjectDetails({ open, onClose, project, mode }: ProjectDetailsProps) {
                 <CloseIcon />
             </IconButton>
             <DialogContent>
-                <ProjectComponent />
+                <Suspense
+                    fallback={
+                        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '50vh' }}>
+                            <CircularProgress color="primary" />
+                        </Box>
+                    }
+                >
+                    <ProjectComponent />
+                </Suspense>
             </DialogContent>
         </Dialog>
     );

@@ -21,7 +21,7 @@ import {
   Build as ToolsIcon,
 } from "@mui/icons-material";
 import { useTheme } from "@mui/material/styles";
-import vodafone_card_early_bird from "../../assets/images/projects/vodafone/vodafone_card_early_bird.jpg";
+import vodafone_card_early_bird from "../../assets/images/projects/vodafone/vodafone_card_early_bird.webp";
 
 import ImageCarousel from "../common/ImageCarousel";
 import ReactPlayer from "react-player";

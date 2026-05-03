@@ -4,14 +4,14 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Typewriter from "typewriter-effect";
 import "../assets/styles/Main.scss";
 import { TypeWriterLabels } from "../constants";
-import profile from "../assets/images/profile.jpeg";
+import profile from "../assets/images/profile.webp";
 
 function Main() {
   return (
     <div className="container">
-      <div className="about-section">
+      <section className="about-section" aria-label="About Abdulrahman Bashir">
         <div className="image-wrapper">
-          <img src={profile} alt="Avatar" />
+          <img src={profile} alt="Abdulrahman Bashir — Senior Frontend Engineer" width={150} height={150} />
         </div>
         <div className="content">
           <div className="social_icons">
@@ -65,7 +65,7 @@ function Main() {
             </a>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }
