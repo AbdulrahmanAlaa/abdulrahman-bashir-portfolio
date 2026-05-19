@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkabdulrahman_bashir_portfolio_template=self.webpackChunkabdulrahman_bashir_portfolio_template||[]).push([[465],{5465:(a,e,l)=>{l.r(e),l.d(e,{default:()=>r});var t=l(579);const r=()=>(0,t.jsx)("div",{className:"project",children:"TalabatMobile TBD"})}}]);
-//# sourceMappingURL=465.b14a99b2.chunk.js.map
