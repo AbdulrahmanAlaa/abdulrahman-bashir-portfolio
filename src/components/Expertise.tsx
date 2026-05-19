@@ -7,43 +7,50 @@ import '../assets/styles/Expertise.scss';
 const webLabels = [
     "React",
     "TypeScript",
+    "Next.js",
+    "Strapi CMS",
+    "React Query",
+    "MobX",
     "C#",
     "SASS",
     "SQL",
-    "Newrelic",
-    "Circuit Breaker",
+    "New Relic",
     "NestJS",
     "NodeJS",
-    "Middleware",
     "PostgreSQL",
-    "Postman"
+    "REST APIs",
 ];
 
 const devopsLabels = [
     "CI/CD",
-    "Terraform",
-    "Kubernetes",
-    "Git",
-    "Docker",
-    "Docker Compose",
     "Drone CI",
+    "Docker",
+    "Kubernetes",
     "AWS",
     "S3 Bucket",
     "AWS Lambda",
-    "AWS CloudFront",
-    "Linux",
+    "CloudFront",
+    "n8n Automation",
+    "BigQuery",
+    "Cloudflare",
+    "Terraform",
     "ArgoCD",
+    "Git",
+    "Linux",
 ];
 
 const mobileLabels = [
     "Flutter",
     "Dart",
+    "BLoC",
     "Firebase",
+    "Sentry",
+    "Braze SDK",
+    "FWF (Feature Flags)",
+    "HLS Streaming",
+    "Maestro Testing",
     "Android Studio",
-    "video streaming",
-    "video player",
-    "HLS",
-    "SQLite"
+    "SQLite",
 ];
 
 function Expertise() {
@@ -54,8 +61,8 @@ function Expertise() {
                 <div className="skills-grid">
                     <div className="skill">
                         <FontAwesomeIcon icon={faReact} size="3x" />
-                        <h3>Full Stack Web Development</h3>
-                        <p>I have built a diverse array of web applications from scratch using modern technologies such as React and Flask. I have a strong proficiency in the SDLC process and frontend + backend development.</p>
+                        <h3>Web & Platform Engineering</h3>
+                        <p>I build scalable web platforms and CMS tools using React and TypeScript. From Server-Driven UI systems on Strapi to microfrontend plugins with React Query — I deliver tools that empower marketing and product teams to operate without engineering bottlenecks.</p>
                         <div className="flex-chips">
                             <span className="chip-title">Tech stack:</span>
                             {webLabels.map((label, index) => (
@@ -66,9 +73,9 @@ function Expertise() {
                     <div className="skill">
                         {/* <FontAwesomeIcon icon={faAndroid} size="3x" /> */}
                         <FontAwesomeIcon icon={faApple} size="3x" />
-                        <h3>Mobile Development</h3>
+                        <h3>Mobile Engineering</h3>
                         <p>
-                            I have developed mobile applications using Flutter, focusing on creating user-friendly interfaces and seamless user experiences.
+                            I build and ship Flutter mobile features at scale — from splash screens and authentication flows to component isolation and offline experiences. I drive observability with Sentry telemetry and SLI dashboards, ensuring reliability for millions of users.
                         </p>
                         <div className="flex-chips">
                             <span className="chip-title">Tech stack:</span>
@@ -79,8 +86,8 @@ function Expertise() {
                     </div>
                     <div className="skill">
                         <FontAwesomeIcon icon={faDocker} size="3x" />
-                        <h3>DevOps & Automation</h3>
-                        <p>Once the application is built, I help clients set up DevOps testing, CI/CD pipelines, and deployment automation to support the successful Go-Live.</p>
+                        <h3>DevOps & Observability</h3>
+                        <p>I design CI/CD pipelines, define SLI/SLO metrics, and build automation workflows that connect tools like Airtable, CMS, and Slack via n8n. From incident response to proactive monitoring with New Relic and BigQuery — I keep systems reliable.</p>
                         <div className="flex-chips">
                             <span className="chip-title">Tech stack:</span>
                             {devopsLabels.map((label, index) => (

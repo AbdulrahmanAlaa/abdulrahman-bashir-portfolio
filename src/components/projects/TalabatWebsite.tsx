@@ -21,16 +21,13 @@ import {
   Build as ToolsIcon,
 } from "@mui/icons-material";
 import { useTheme } from "@mui/material/styles";
-import vodafone_card_early_bird from "../../assets/images/projects/vodafone/vodafone_card_early_bird.webp";
-
-import ImageCarousel from "../common/ImageCarousel";
 import ReactPlayer from "react-player";
+
 const videos = [
   "https://youtu.be/szLvhiqLGB0",
   "https://youtu.be/dL3v1gE2ZsI",
   "https://youtu.be/tsSShCSc1xM",
 ];
-const images = [vodafone_card_early_bird];
 
 const technologies = [
   "AngularJS",
@@ -97,7 +94,7 @@ const TalabatWebsite = () => {
               <Grid
                 item
                 xs={12}
-                md={4}
+                md={12}
                 sx={{
                   order: { xs: 2, md: 1 },
                 }}
@@ -259,17 +256,6 @@ const TalabatWebsite = () => {
                 </Box>
               </Grid>
 
-              {/* Right side - Image Carousel */}
-              <Grid
-                item
-                xs={12}
-                md={8}
-                sx={{
-                  order: { xs: 1, md: 2 },
-                }}
-              >
-                <ImageCarousel images={images} />
-              </Grid>
             </Grid>
           </Paper>
         </Grid>

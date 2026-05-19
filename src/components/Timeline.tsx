@@ -15,7 +15,7 @@ function Timeline() {
       <div className="items-container">
         <h1>Career History</h1>
         <VerticalTimeline>
-          {/* Talabat Mobile */}
+          {/* Talabat Mobile — Home Squad (Current) */}
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             contentStyle={{ background: "white", color: "rgb(39, 40, 34)" }}
@@ -25,60 +25,110 @@ function Timeline() {
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
             <h3 className="vertical-timeline-element-title">
-              Frontend - Talabat (Delivery Hero SE)
+              Senior Software Engineer — Home Squad, Talabat (Delivery Hero SE)
             </h3>
             <h4 className="vertical-timeline-element-subtitle">
               Dubai, United Arab Emirates
             </h4>
             <div className="timeline-content">
-              <h4>📲 Instagram-style Video Stories Feature (2024 – Present)</h4>
+              <h4>🏠 Home Screen & Mobile Platform (Flutter)</h4>
               <ul>
                 <li>
-                  Led the design and development of an interactive Stories
-                  experience, similar to Instagram, built using Flutter and
-                  integrated across Talabat’s mobile platforms.
+                  Built the <strong>Home CMS platform</strong> as a microfrontend React 18 plugin — enabling marketing to manage screen components, experiments, and campaigns across 8 markets without mobile releases.
                 </li>
                 <li>
-                  Enabled adaptive video streaming by integrating HLS playback
-                  via AWS S3 and optimizing user experience with smooth gesture
-                  interactions (hold-to-pause, tap-to-reset, auto-play).
+                  Led <strong>Sentry telemetry migration</strong> — designed the ComponentTracer.auto pattern with SLI dashboards (STTI, TTI, NTS), establishing the reference implementation adopted across the tribe.
                 </li>
                 <li>
-                  Managed complex playback behavior through a clean BLoC
-                  architecture, ensuring state consistency and performance
-                  across devices.
+                  Drove <strong>Email OTP login experiment</strong> — investigated Sample Ratio Mismatch using BigQuery, launched v2 experiment, and added SRM observability to New Relic dashboards.
+                </li>
+                <li>
+                  Architected <strong>component isolation</strong> — wrapping all screen components via backend API to enforce Flutter layout constraints without manual template updates.
+                </li>
+                <li>
+                  Shipped <strong>bottom navigation</strong> with header changes, offline fallback, stacked navigation, and localization mapping behind experiments.
+                </li>
+                <li>
+                  Led <strong>Braze SDK upgrade</strong> — cross-platform migration, Flutter video player compliance, CI/CD pipeline optimization with Android 35 support.
                 </li>
               </ul>
+
+              <h4>🚨 Incident Response & Reliability</h4>
               <ul>
                 <li>
-                  Architected a serverless video processing pipeline with AWS
-                  Lambda and S3 to automatically transcode videos into multiple
-                  HLS resolutions.
+                  Resolved home screen availability drop (99.75% → 99.2%) by identifying noisy alerts being ignored, then refined alert thresholds with the Security team.
                 </li>
                 <li>
-                  Scaled backend video workflow by converting FFmpeg commands,
-                  significantly reducing manual preparation time.
+                  Fixed splash screen blocking on iOS 13.40.0 — identified FWF SDK async/await blocking main thread, coordinated weekend deployment.
                 </li>
                 <li>
-                  Ensured high quality by achieving 100% test coverage on the
-                  video stories module with unit and widget tests.
+                  Deep-dived Strapi CMS on EID day — applied direct DB fix to unblock banner launch when component targeting stored incorrect values.
                 </li>
                 <li>
-                  Guaranteed a reliable user experience by simulating real-world
-                  playback scenarios and user interactions in tests.
+                  Coordinated with Security team to resolve Cloudflare firewall rules blocking home screen (403 errors from DigitalOcean ASN/Dart user-agent fingerprints).
+                </li>
+              </ul>
+
+              <h4>📊 Observability & Data</h4>
+              <ul>
+                <li>
+                  Defined SLIs for all owned flows, added SRM tracking to New Relic dashboards, and prepared Sentry migration for the team.
                 </li>
                 <li>
-                  Maximized device compatibility and playback reliability by
-                  enforcing H.264 encoding standards.
+                  Validated BigQuery homescreen_loaded attributes and self-discovered Looker Studio dashboards for experiment tracking.
                 </li>
                 <li>
-                  Implemented robust monitoring using New Relic and internal
-                  dashboards to track playback errors, feature adoption, and
-                  KPIs.
+                  Removed 989 lines of dead code through MainDB feature flag cleanup across 25 files.
+                </li>
+              </ul>
+            </div>
+          </VerticalTimelineElement>
+
+          {/* Talabat — In-App Marketing & Splash Screen */}
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work"
+            contentStyle={{ background: "white", color: "rgb(39, 40, 34)" }}
+            contentArrowStyle={{ borderRight: "7px solid  white" }}
+            date="Mid 2020 - Mid 2023"
+            iconStyle={{ background: "#5000ca", color: "rgb(39, 40, 34)" }}
+            icon={<FontAwesomeIcon icon={faBriefcase} />}
+          >
+            <h3 className="vertical-timeline-element-title">
+              Software Engineer — In-App Marketing, Talabat (Delivery Hero SE)
+            </h3>
+            <h4 className="vertical-timeline-element-subtitle">
+              Dubai, United Arab Emirates
+            </h4>
+            <div className="timeline-content">
+              <h4>📱 In-App Marketing (Server-Driven UI)</h4>
+              <ul>
+                <li>
+                  Built and maintained the <strong>IPM platform</strong> — a Server-Driven UI system on customized Strapi CMS that enabled marketing to ship banners, campaigns, and home screen components to mobile <strong>without requiring app releases</strong>.
                 </li>
                 <li>
-                  Drove feature enhancements by collaborating with design,
-                  product, and marketing teams using real-time data.
+                  <strong>Business impact:</strong> Shortened time-to-market for campaigns and eliminated external vendor costs by bringing all content management in-house.
+                </li>
+                <li>
+                  Created the <strong>Screen Ops Portal</strong> plugin — environment setup, Drone CI/CD for staging/production, authentication via Okta tokens, and dynamic time targeting with cron support.
+                </li>
+                <li>
+                  Built <strong>n8n automation</strong> flows integrating Airtable → CMS with Slack notifications, reducing manual operational steps for marketing teams.
+                </li>
+              </ul>
+
+              <h4>🎬 Video Reels & Splash Screen</h4>
+              <ul>
+                <li>
+                  Led the design and development of an interactive <strong>Stories experience</strong> (Instagram-style) built in Flutter with HLS adaptive streaming via AWS S3.
+                </li>
+                <li>
+                  Architected a <strong>serverless video processing pipeline</strong> with AWS Lambda and S3 to transcode videos into multiple HLS resolutions.
+                </li>
+                <li>
+                  Evolved the <strong>splash screen</strong> from shimmer POC to multi-country video overlay — implementing cache-first strategy, FWF kill switch, fade-out animations, and SplashOverlay_TTI monitoring.
+                </li>
+                <li>
+                  Achieved 100% test coverage on the video stories module with unit and widget tests.
                 </li>
               </ul>
             </div>

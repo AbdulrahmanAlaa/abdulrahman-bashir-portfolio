@@ -16,55 +16,51 @@ import {
   CheckCircleOutline as CheckIcon,
   LocationOn as LocationIcon,
   Build as ToolsIcon,
-  TrendingUp as ImpactIcon,
-  BugReport as IncidentIcon,
+  Architecture as ArchIcon,
+  Speed as SpeedIcon,
 } from "@mui/icons-material";
 import { useTheme } from "@mui/material/styles";
 
 const technologies = [
-  "Flutter",
-  "Dart",
-  "BLoC",
-  "Firebase",
-  "Sentry",
-  "Braze SDK",
-  "FWF (Feature Flags)",
-  "HLS Streaming",
-  "AWS S3",
-  "AWS Lambda",
-  "New Relic",
-  "BigQuery",
-  "Cloudflare",
+  "React 18",
+  "TypeScript",
+  "Microfrontend Plugin",
+  "React Query",
+  "MobX",
   "Strapi CMS",
-  "Maestro Testing",
+  "Server-Driven UI",
+  "Drone CI/CD",
+  "AWS S3",
   "n8n Automation",
-  "Eppo",
-  "Looker Studio",
+  "Airtable",
+  "Okta Auth",
+  "JSON Schema Validation",
+  "Slack Integration",
 ];
 
 const responsibilities = [
-  "Led splash screen feature lifecycle — from shimmer POC through multi-country video rollout with caching, SplashOverlay_TTI monitoring, FWF kill switches, and fade-out animations",
-  "Drove Email OTP login experiment — investigated Sample Ratio Mismatch using BigQuery, launched v2 experiment with 50% traffic, added SRM observability to New Relic dashboards",
-  "Led Sentry telemetry migration — designed the ComponentTracer.auto pattern, created SLI dashboards (STTI, TTI, NTS), establishing the reference implementation adopted by the tribe",
-  "Architected component isolation — wrapping all screen components via backend API to enforce Flutter layout constraints without manual template updates or frontend changes",
-  "Shipped bottom navigation — implemented back button, profile icon, offline fallback for home and More tab, stacked navigation, and localization mapping behind experiments",
-  "Led Braze SDK upgrade — cross-platform migration planning, updated Flutter video player fork for compliance, resolved CI/CD build delays with Android 35 support",
-  "Configured and launched screen ranker experiments across Iraq, Jordan, and Bahrain with 33/33/33 split, validating BigQuery attribute correctness for the data team",
-  "Removed 989 lines of dead code through MainDB feature flag cleanup (ff_user_is_profile_v2_endpoint_enabled) across 25 files in the user module",
-  "Built n8n automation flows integrating Airtable → In-App Marketing CMS with Slack notifications, reducing manual operational steps for marketing teams",
-  "Mentored team members on SLI definitions, telemetry packages, and feature planning; led bug triage meetings and demo presentations",
+  "Designed and built the Home CMS as a microfrontend plugin using React 18 — integrating into the existing Strapi-based ops portal while maintaining independent deployability",
+  "Replaced Redux with React Query to eliminate MobX conflicts in the host application, simplifying state handling and reducing maintenance overhead",
+  "Mapped frontend metadata dynamically and added JSON validation to align with backend changes, reducing misconfigurations and increasing CMS reliability",
+  "Added backend-driven segment and experiment fields with key validation to prevent configuration errors in A/B testing setups",
+  "Introduced multi-level scheduling rules with rotation support — enabling time-based component scheduling for campaigns like the coffee tile experiment",
+  "Built HTML and image previewers for content validation before publishing, then delegated implementation to the IPM team as shared components",
+  "Deployed audit schemas in staging and production with VPN usage guidance, supporting compliance and traceability requirements",
+  "Created generic CMS components (e.g., ColorDropDown) and updated tile properties for consistency, supporting reusability and scalability",
+  "Explored and documented CMS architecture — identified overlapping IPM and Home domain responsibilities, aligned with Staff Engineer to separate domain boundaries via RFC",
+  "Directed API routing from CMS to Home Gateway instead of Launcher, supporting proper domain alignment and service routing",
 ];
 
-const incidents = [
-  "Resolved home screen availability drop (99.75% → 99.2%) — identified noisy alerts being ignored by teams, refined thresholds with Security team",
-  "Fixed splash screen blocking on iOS 13.40.0 — root cause: FWF SDK async/await blocking main thread; coordinated weekend fix deployment",
-  "Deep-dived Strapi CMS on EID day — applied direct DB fix to unblock banner launch when component targeting stored incorrect values",
-  "Led ACB banner disappearance investigation — identified lazy loading issue from incentive service across cross-team dependencies",
-  "Coordinated with Security team to resolve Cloudflare firewall rules blocking home screen (403 errors from DigitalOcean ASN/Dart user-agent JA3/JA4 fingerprints)",
-  "Caught critical customer object mapping bug in QA before release, coordinated release revert to prevent production incident",
+const architectureHighlights = [
+  "Microfrontend Architecture — Plugin runs independently within the ops portal, built with React 18 and its own CI/CD pipeline via Drone for staging and production",
+  "Server-Driven UI — Backend defines screen layout and component hierarchy, enabling marketing to configure home screen content without mobile releases",
+  "State Management Strategy — Chose React Query over Redux after discovering global MobX state in the parent app would create ambiguities with two competing state systems",
+  "Domain Separation RFC — Authored RFC to separate Home CMS from IPM CMS, establishing clear ownership boundaries and directing backend calls to the correct gateway",
+  "Authentication — Integrated Okta tokens via IPM BFF for secure access control across environments",
+  "Automation Pipeline — Connected Airtable → CMS → Slack via n8n workflows, automating banner creation and notification flows for marketing teams",
 ];
 
-const TalabatMobile = () => {
+const HomeCMS = () => {
   const theme = useTheme();
   const typographyStyles = {
     fontFamily: '"Lato", sans-serif',
@@ -85,7 +81,7 @@ const TalabatMobile = () => {
             }}
           >
             <Grid container spacing={3}>
-              {/* Left side - Company Info & Roles */}
+              {/* Left side - Project Info */}
               <Grid
                 item
                 xs={12}
@@ -127,7 +123,7 @@ const TalabatMobile = () => {
                         color="text.primary"
                         sx={typographyStyles}
                       >
-                        Talabat Mobile
+                        Talabat Home CMS
                       </Typography>
                     </Box>
                     <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
@@ -167,7 +163,7 @@ const TalabatMobile = () => {
                           color="text.primary"
                           sx={typographyStyles}
                         >
-                          Senior Software Engineer (IC3)
+                          Technical Lead & Architect
                         </Typography>
                       </Box>
                     </Box>
@@ -193,24 +189,7 @@ const TalabatMobile = () => {
                           color="text.primary"
                           sx={typographyStyles}
                         >
-                          {(() => {
-                            const startDate = new Date(2019, 4);
-                            const currentDate = new Date();
-                            const diffInMonths =
-                              (currentDate.getFullYear() -
-                                startDate.getFullYear()) *
-                                12 +
-                              (currentDate.getMonth() - startDate.getMonth());
-                            const years = Math.floor(diffInMonths / 12);
-                            const months = Math.round(diffInMonths % 12);
-                            return months === 0
-                              ? `${years} year${years !== 1 ? "s" : ""}`
-                              : `${years} year${
-                                  years !== 1 ? "s" : ""
-                                } and ${months} month${
-                                  months !== 1 ? "s" : ""
-                                }`;
-                          })()}
+                          Feb 2025 – Present
                         </Typography>
                       </Box>
                     </Box>
@@ -251,7 +230,7 @@ const TalabatMobile = () => {
                 </Box>
               </Grid>
 
-              {/* Right side - Impact Summary */}
+              {/* Right side - Business Impact */}
               <Grid
                 item
                 xs={12}
@@ -271,23 +250,23 @@ const TalabatMobile = () => {
                   }}
                 >
                   <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 2 }}>
-                    <ImpactIcon color="primary" />
+                    <SpeedIcon color="primary" />
                     <Typography
                       variant="h5"
                       color="text.primary"
                       sx={typographyStyles}
                     >
-                      Impact Highlights
+                      Business Impact
                     </Typography>
                   </Box>
                   <List dense>
                     {[
-                      "Built Server-Driven UI platform enabling marketing to operate without mobile releases — shortened time-to-market and eliminated external vendor costs",
-                      "Established Sentry telemetry migration pattern (ComponentTracer.auto) adopted across the entire tribe as reference implementation",
-                      "Led SRM investigation on Email OTP experiment using BigQuery — resolved mismatch, validated v2 for production rollout",
-                      "Architected component isolation via backend API wrapping — enforcing Flutter layout constraints consistently without frontend changes",
-                      "Defined SLI/SLO metrics for all owned flows, built New Relic dashboards, and prepared full Sentry migration for the team",
-                      "Led multiple critical incident responses including weekend deployments and EID day DB fixes to protect user experience for 30M+ users",
+                      "Empowered marketing to manage home screen components, banners, and campaigns across 8 markets — without requiring mobile app releases",
+                      "Shortened campaign time-to-market from days to minutes by providing a self-service CMS with scheduling, targeting, and experiment support",
+                      "Eliminated external vendor costs by bringing all content management in-house through the Server-Driven UI architecture",
+                      "Reduced manual operations through n8n automation — Airtable → CMS → Slack workflows for banner creation and team notifications",
+                      "Prevented production misconfigurations through JSON validation, segment key verification, and experiment field constraints",
+                      "Launched coffee tile experiment at 100% in UAE using the rescheduling feature — first production use of recurring schedule capability",
                     ].map((impact, index) => (
                       <ListItem key={index} sx={{ py: 0.5 }}>
                         <ListItemIcon sx={{ minWidth: 28 }}>
@@ -317,7 +296,7 @@ const TalabatMobile = () => {
           </Paper>
         </Grid>
 
-        {/* Key Responsibilities */}
+        {/* Architecture Highlights */}
         <Grid item xs={12}>
           <Paper
             elevation={3}
@@ -327,13 +306,50 @@ const TalabatMobile = () => {
             }}
           >
             <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 3 }}>
+              <ArchIcon color="primary" />
+              <Typography
+                variant="h5"
+                color="text.primary"
+                sx={typographyStyles}
+              >
+                Architecture & Technical Decisions
+              </Typography>
+            </Box>
+            <List>
+              {architectureHighlights.map((highlight, index) => (
+                <ListItem key={index} sx={{ py: 0.5 }}>
+                  <ListItemIcon sx={{ minWidth: 36 }}>
+                    <Box
+                      sx={{
+                        width: 6,
+                        height: 6,
+                        borderRadius: "50%",
+                        bgcolor: "#5000ca",
+                      }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary={highlight}
+                    primaryTypographyProps={{
+                      color: "text.primary",
+                      fontFamily: '"Lato", sans-serif',
+                    }}
+                  />
+                </ListItem>
+              ))}
+            </List>
+
+            <Divider sx={{ my: 3 }} />
+
+            {/* Key Contributions */}
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 3 }}>
               <CheckIcon color="primary" />
               <Typography
                 variant="h5"
                 color="text.primary"
                 sx={typographyStyles}
               >
-                Key Responsibilities & Achievements
+                Key Contributions
               </Typography>
             </Box>
             <List>
@@ -359,43 +375,6 @@ const TalabatMobile = () => {
                 </ListItem>
               ))}
             </List>
-
-            <Divider sx={{ my: 3 }} />
-
-            {/* Incident Response Section */}
-            <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 3 }}>
-              <IncidentIcon color="primary" />
-              <Typography
-                variant="h5"
-                color="text.primary"
-                sx={typographyStyles}
-              >
-                Incident Response & Reliability
-              </Typography>
-            </Box>
-            <List>
-              {incidents.map((incident, index) => (
-                <ListItem key={index} sx={{ py: 0.5 }}>
-                  <ListItemIcon sx={{ minWidth: 36 }}>
-                    <Box
-                      sx={{
-                        width: 6,
-                        height: 6,
-                        borderRadius: "50%",
-                        bgcolor: "#e53935",
-                      }}
-                    />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary={incident}
-                    primaryTypographyProps={{
-                      color: "text.primary",
-                      fontFamily: '"Lato", sans-serif',
-                    }}
-                  />
-                </ListItem>
-              ))}
-            </List>
           </Paper>
         </Grid>
       </Grid>
@@ -403,4 +382,4 @@ const TalabatMobile = () => {
   );
 };
 
-export default TalabatMobile;
+export default HomeCMS;

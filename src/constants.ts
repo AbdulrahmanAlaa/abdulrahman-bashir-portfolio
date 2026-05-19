@@ -1,7 +1,7 @@
 export const TypeWriterLabels = {
-    first: "Code. Create. Launch. Repeat.",
-    second: "Turning ideas into real things.",
-    third: "I turn coffee into code and dreams into digital reality.",
-    fourth: "From sketch to screen, I bring visions to life.",
-    fifth: "I turn coffee into code and dreams into digital reality.",
+    first: "Building mobile experiences for 30M+ users.",
+    second: "From CMS plugins to Flutter screens — I ship end-to-end.",
+    third: "Architecture, automation, and a lot of coffee.",
+    fourth: "I turn incidents into runbooks and experiments into insights.",
+    fifth: "Senior Engineer at Talabat · Delivery Hero",
 }

@@ -11,6 +11,7 @@ import { faAndroid, faApple } from '@fortawesome/free-brands-svg-icons';
 // and only render inside a fullscreen dialog on user interaction
 const TalabatWebsite = lazy(() => import('./projects/TalabatWebsite'));
 const TalabatMobile = lazy(() => import('./projects/TalabatMobile'));
+const HomeCMS = lazy(() => import('./projects/HomeCMS'));
 const Vodafone = lazy(() => import('./projects/Vodafone'));
 
 function Project() {
@@ -29,7 +30,7 @@ function Project() {
         {
             id: 2,
             title: "Talabat Mobile",
-            description: "Talabat mobile applications for iOS and Android.",
+            description: "Flutter-powered mobile platform — splash screens, authentication, component isolation, and observability for 30M+ users.",
             image: talabatWebsite,
             link: "https://www.talabat.com/",
             hasAndroid: true,
@@ -38,6 +39,14 @@ function Project() {
         },
         {
             id: 3,
+            title: "Talabat Home CMS",
+            description: "Microfrontend React 18 plugin — Server-Driven UI platform enabling marketing to manage home screen components across 8 markets without app releases.",
+            image: talabatWebsite,
+            link: "https://www.talabat.com/",
+            component: HomeCMS
+        },
+        {
+            id: 4,
             title: "Vodafone Germany",
             description: "Vodafone telecommunications website.",
             image: vodafoneWebsite,

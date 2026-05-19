@@ -31,7 +31,7 @@ function Main() {
             </a>
           </div>
           <h1>Abdulrahman Bashir</h1>
-          <p>Senior Frontend Engineer</p>
+          <p>Senior Software Engineer</p>
           <h4 className="typewriter-text">
             <Typewriter
               options={{
